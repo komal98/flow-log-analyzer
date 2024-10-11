@@ -29,12 +29,14 @@ git clone [<repository-url>](https://github.com/komal98/illumio-flow-log-analyze
 cd illumio-flow-log-analyzer
 ```
 2.Compile the Code: Navigate to the src directory and compile the code:
+  ```bash
   cd src
   javac Main.java
-
+  ```
 3.Run the Program: Execute the program directly from the src directory:
+  ```bash
   java Main
-
+  ```
 4. Ensure Input Files Are in Place: Make sure that the input files (flow-logs.txt, lookup.csv, and protocol-numbers.csv) are located in the src/input directory.
 
 5. Check Output: After running, check the src/output directory for the generated CSV files containing the tag counts and port/protocol counts.
