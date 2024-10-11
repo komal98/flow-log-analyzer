@@ -1,6 +1,9 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
@@ -17,18 +20,30 @@ public class Main {
     private static final int MIN_PORT = 1;
     private static final int MAX_PORT = 65535;
 
-    /**
-     * The main method serves as the entry point of the application.
-     * It coordinates the execution of basic functionality tests,
-     * file generation, and large file functionality tests.
-     *
-     * @param args command-line arguments (not used)
-     */
     public static void main(String[] args) {
+        createOutputDirectory();
         testBasicFunctionality();
         generateLargeFile();
         generateLargeLookupNumbers();
         testLargeFilesFunctionality();
+    }
+
+    /**
+     * Creating directory output for the results
+     */
+    public static void createOutputDirectory() {
+        Path outputPath = Paths.get("src", "output");
+
+        try {
+            if (!Files.exists(outputPath)) {
+                Files.createDirectory(outputPath);
+                System.out.println("Directory 'output' created successfully.");
+            } else {
+                System.out.println("Directory 'output' already exists.");
+            }
+        } catch (IOException e) {
+            System.err.println("An error occurred while creating the directory: " + e.getMessage());
+        }
     }
 
     /**
