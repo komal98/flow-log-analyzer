@@ -26,7 +26,9 @@ The program generates two output CSV files:
 1. **Clone the Repository**:
 ```bash
 git clone [<repository-url>](https://github.com/komal98/flow-log-analyzer.git)
-cd illumio-flow-log-analyzer
+```
+```bash
+cd flow-log-analyzer
 ```
 2.Compile the Code: Navigate to the src directory and compile the code:
   ```bash
