@@ -6,7 +6,7 @@ public class Main {
 
     private static void testBasicFunctionality(){
         parser.loadProtocolNumbers("src/input/protocol-numbers.csv");
-        parser.loadLookupTable("src/input/lookup.csv");
+        parser.loadLookupTable("src/input/lookup-basic.csv");
         parser.processFlowLog("src/input/flow-logs-basic.txt");
         parser.extractResults("basicTagCounts", "basicPortProtocolCounts");
     }

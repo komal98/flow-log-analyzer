@@ -11,5 +11,6 @@ Port_Protocol,Count
 49158,tcp,1
 143,tcp,1
 49156,tcp,1
+22,tcp,1
 49154,tcp,1
 1024,tcp,1
