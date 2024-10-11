@@ -44,6 +44,10 @@ cd flow-log-analyzer
 4. Ensure Input Files Are in Place: Make sure that the input files (flow-logs.txt, lookup.csv, and protocol-numbers.csv) are located in the src/input directory.
 
 5. Check Output: After running, check the src/output directory for the generated CSV files containing the tag counts and port/protocol counts.
+   
+6. If you are running the code in Intellij make sure to add 'src/' to the file path in the build / run configuration as shown in the image below:
+   ![Screenshot 2024-10-10 at 10 14 00 PM](https://github.com/user-attachments/assets/b8ae31a7-624b-462e-a038-279d6e5ba2cc)
+
 
 
 
