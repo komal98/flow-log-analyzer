@@ -33,6 +33,8 @@ cd flow-log-analyzer
 2.Compile the Code: Navigate to the src directory and compile the code:
   ```bash
   cd src
+  ```
+ ```bash
   javac Main.java
   ```
 3.Run the Program: Execute the program directly from the src directory:
