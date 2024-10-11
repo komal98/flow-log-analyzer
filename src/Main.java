@@ -17,6 +17,13 @@ public class Main {
     private static final int MIN_PORT = 1;
     private static final int MAX_PORT = 65535;
 
+    /**
+     * The main method serves as the entry point of the application.
+     * It coordinates the execution of basic functionality tests,
+     * file generation, and large file functionality tests.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         testBasicFunctionality();
         generateLargeFile();
@@ -24,20 +31,34 @@ public class Main {
         testLargeFilesFunctionality();
     }
 
-    private static void testBasicFunctionality(){
+    /**
+     * Tests the basic functionality of the FlowLogParser by loading
+     * protocol numbers, loading a lookup table, processing a flow log,
+     * and extracting results to output files.
+     */
+    private static void testBasicFunctionality() {
         parser.loadProtocolNumbers("src/input/protocol-numbers.csv");
         parser.loadLookupTable("src/input/lookup-basic.csv");
         parser.processFlowLog("src/input/flow-logs-basic.txt");
         parser.extractResults("basicTagCounts", "basicPortProtocolCounts");
     }
 
-    private static void testLargeFilesFunctionality(){
+    /**
+     * Tests the functionality of the FlowLogParser using large files
+     * by loading protocol numbers, loading a lookup table, processing
+     * a flow log, and extracting results to output files.
+     */
+    private static void testLargeFilesFunctionality() {
         parser.loadProtocolNumbers("src/input/protocol-numbers.csv");
         parser.loadLookupTable("src/input/lookup-large.csv");
         parser.processFlowLog("src/input/flow-logs-large.txt");
         parser.extractResults("largeTagCounts", "largePortProtocolCounts");
     }
 
+    /**
+     * Generates a large flow log file with random entries. The file
+     * contains simulated flow log data for processing.
+     */
     public static void generateLargeFile() {
         String filePath = "src/input/flow-logs-large.txt";
         Random random = new Random();
@@ -50,7 +71,7 @@ public class Main {
                 String action = random.nextBoolean() ? "ACCEPT" : "REJECT";
 
                 writer.write("2 123456789012 eni-" + i + " 10.0.1." + (i % 255) + " 198.51.100." + (i % 255)
-                        + " 443 " + (random.nextInt(MAX_PORT - MIN_PORT  + 1) + MIN_PORT ) + " "
+                        + " 443 " + (random.nextInt(MAX_PORT - MIN_PORT + 1) + MIN_PORT) + " "
                         + random.nextInt(256) + " 25 20000 " + startTime + " " + endTime + " "
                         + action + " OK\n");
             }
@@ -59,6 +80,10 @@ public class Main {
         }
     }
 
+    /**
+     * Generates a large lookup numbers file with random entries.
+     * The file contains mappings of destination ports, protocols, and tags.
+     */
     public static void generateLargeLookupNumbers() {
         String filePath = "src/input/lookup-large.csv";
 
