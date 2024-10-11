@@ -32,7 +32,8 @@ public class Main {
      * Creating directory output for the results
      */
     public static void createOutputDirectory() {
-        Path outputPath = Paths.get("src", "output");
+        Path currentPath = Paths.get("").toAbsolutePath();
+        Path outputPath = currentPath.resolve("output");
 
         try {
             if (!Files.exists(outputPath)) {
