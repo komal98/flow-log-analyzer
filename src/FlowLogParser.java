@@ -95,8 +95,8 @@ public class FlowLogParser {
      * @param portProtocolCountsFileName the name of the file to save port/protocol counts
      */
     public void extractResults(String tagCountsFileName, String portProtocolCountsFileName) {
-        try (BufferedWriter tagWriter = new BufferedWriter(new FileWriter("src/output/" + tagCountsFileName + ".csv"));
-             BufferedWriter portProtocolWriter = new BufferedWriter(new FileWriter("src/output/" + portProtocolCountsFileName + ".csv"))) {
+        try (BufferedWriter tagWriter = new BufferedWriter(new FileWriter("output/" + tagCountsFileName + ".csv"));
+             BufferedWriter portProtocolWriter = new BufferedWriter(new FileWriter("output/" + portProtocolCountsFileName + ".csv"))) {
 
             tagWriter.write("Tag,Count\n");
             for (Map.Entry<String, Integer> entry : tagCounts.entrySet()) {

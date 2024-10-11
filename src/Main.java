@@ -37,9 +37,9 @@ public class Main {
      * and extracting results to output files.
      */
     private static void testBasicFunctionality() {
-        parser.loadProtocolNumbers("src/input/protocol-numbers.csv");
-        parser.loadLookupTable("src/input/lookup-basic.csv");
-        parser.processFlowLog("src/input/flow-logs-basic.txt");
+        parser.loadProtocolNumbers("input/protocol-numbers.csv");
+        parser.loadLookupTable("input/lookup-basic.csv");
+        parser.processFlowLog("input/flow-logs-basic.txt");
         parser.extractResults("basicTagCounts", "basicPortProtocolCounts");
     }
 
@@ -49,9 +49,9 @@ public class Main {
      * a flow log, and extracting results to output files.
      */
     private static void testLargeFilesFunctionality() {
-        parser.loadProtocolNumbers("src/input/protocol-numbers.csv");
-        parser.loadLookupTable("src/input/lookup-large.csv");
-        parser.processFlowLog("src/input/flow-logs-large.txt");
+        parser.loadProtocolNumbers("input/protocol-numbers.csv");
+        parser.loadLookupTable("input/lookup-large.csv");
+        parser.processFlowLog("input/flow-logs-large.txt");
         parser.extractResults("largeTagCounts", "largePortProtocolCounts");
     }
 
@@ -60,7 +60,7 @@ public class Main {
      * contains simulated flow log data for processing.
      */
     public static void generateLargeFile() {
-        String filePath = "src/input/flow-logs-large.txt";
+        String filePath = "input/flow-logs-large.txt";
         Random random = new Random();
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
@@ -85,7 +85,7 @@ public class Main {
      * The file contains mappings of destination ports, protocols, and tags.
      */
     public static void generateLargeLookupNumbers() {
-        String filePath = "src/input/lookup-large.csv";
+        String filePath = "input/lookup-large.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             Set<String> generatedEntries = new HashSet<>();
